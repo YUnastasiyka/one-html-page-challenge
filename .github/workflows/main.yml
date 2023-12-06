@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 14
+
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      - name: Build
+        run: |
+          # Add any build commands if required
+          
+
+      - name: Deploy to GitHub Pages
+        run: |
+          # Add any deployment commands if required
+          # For example, if it's a React app, use: npm run deploy-gh-pages
+          # Make sure to update this based on the project's build/deployment setup
+          echo "Deployment script goes here"
+
